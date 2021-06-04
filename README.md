@@ -18,4 +18,4 @@ kubernetes   ClusterIP      10.96.0.1      <none>        443/TCP        3h1m
 
 **Able to access the application in browser with below URL**
   
-<public-IP-of-workedr-node>:30000/myweb
+public-IP-of-workedr-node:30000/myweb
