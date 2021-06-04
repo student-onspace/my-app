@@ -21,6 +21,4 @@ spec:
       - image: devopsonspace/java-app:v1.0
         name: javaapp
         ports:
-        - containerPort: 8080
-  imagePullSecrets:
-  - name: regcred        
+        - containerPort: 8080       
