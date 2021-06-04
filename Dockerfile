@@ -9,9 +9,9 @@ RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.66/* /opt/tomcat/.
 RUN yum -y install java
 RUN java -version
+COPY target/*.war /opt/tomcat/webapps/myweb.war
 
 WORKDIR /opt/tomcat/webapps
-COPY target/*.war /usr/local/tomcat/webapps/myweb.war
 
 EXPOSE 8080
 
