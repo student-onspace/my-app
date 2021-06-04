@@ -1,3 +1,3 @@
-FROM tomcat:7-jre7
-COPY target/*.war /usr/local/tomcat/webapps/myweb.war
+FROM tomcat:8.0-jre8
+COPY target/*.war $CATALINA_HOME/webapps/myweb.war
 # Added to test webhook
