@@ -2,11 +2,15 @@ pipeline{
     agent any
     stages{
     stage('Git Checkout'){
+    steps{
     git branch: 'main', url: 'https://github.com/student-onspace/my-app.git'
 	}
+    }
 	
 	stage('Maven Build'){
+	steps{
 		sh 'mvn clean package'
+	}
 	}
 	stage("docker image build"){
             steps{
