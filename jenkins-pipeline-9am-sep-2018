@@ -1,4 +1,6 @@
-node{
+pipeline{
+    agent any
+    stages{
     stage('Git Checkout'){
     git branch: 'main', url: 'https://github.com/student-onspace/my-app.git'
 	}
@@ -20,6 +22,7 @@ node{
                 
             }
         }
+ }
  }
 
 
