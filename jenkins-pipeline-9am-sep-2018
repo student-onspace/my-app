@@ -6,6 +6,20 @@ node{
 	stage('Maven Build'){
 		sh 'mvn clean package'
 	}
+	stage("docker image build"){
+            steps{
+                sh "docker build -t devopsonspace/my-app:v1.0 ."
+            }
+        }
+        stage("docker image push"){
+            steps{
+                withCredentials([string(credentialsId: 'dockerhub_creds', variable: 'docker_password')]) {
+                    sh "docker login -u devopsonspace -p ${docker_password}"
+                    sh "docker push devopsonspace/my-app:v1.0"
+                }
+                
+            }
+        }
  }
 
 
